@@ -1,26 +1,14 @@
-const express = require("express");
-const app = express();
-const port = 3000;
-const database = require("./dbconnector.js");
+const { createUser, verifyUser } = require("./userModel");
 
-app.get("/", (req, res) => {
-  res.send("private saker");
-});
-
-
-app.get("/Users", async (req, res) => {
-  let query = "SELECT * FROM users;";
-
+async function main() {
   try {
-    let users = await database.query(query);
+    await createUser("JERK", "slop123");
 
-    res.send(users);
-  } catch (error) {
-    res.send(error);
+    const loginSuccess = await verifyUser("JERK", "slop123");
+    console.log(loginSuccess ? "Login success!" : "Login failed!");
+  } catch (err) {
+    console.error(err.message);
   }
-});
+}
 
-
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
-});
+main();
