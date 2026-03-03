@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PagePals — Add Book</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="books.html">PagePals</a>
+    <div class="nav-links">
+      <a href="books.html">My Books</a>
+      <a href="add.html" class="active">Add Book</a>
+      <a href="profile.html">Profile</a>
+      <button class="logout-btn" onclick="logout()">Sign out</button>
+    </div>
+  </nav>
+
+  <main class="add-main">
+    <a class="back-link" href="books.html">← Back to my books</a>
+    <h2 id="pageTitle">Add a book</h2>
+
+    <div class="card">
+      <div class="form-body">
+        <div class="row">
+          <div class="field">
+            <label>Title</label>
+            <input type="text" id="title" placeholder="Book title" />
+          </div>
+          <div class="field">
+            <label>Author</label>
+            <input type="text" id="author" placeholder="Author name" />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label>Status</label>
+            <select id="status" onchange="toggleFinishDate()">
+              <option value="reading">Currently reading</option>
+              <option value="finished">Finished</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Date added</label>
+            <input type="date" id="dateAdded" />
+          </div>
+        </div>
+
+        <div class="field" id="finishDateField" style="display:none">
+          <label>Date finished</label>
+          <input type="date" id="dateFinished" />
+        </div>
+
+        <div class="field">
+          <label>Review / notes</label>
+          <textarea id="review" placeholder="What did you think? (optional)"></textarea>
+        </div>
+
+        <div class="message" id="formMsg"></div>
+        <button class="btn-primary" id="submitBtn" onclick="handleSubmit()">Add book</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="add.js"></script>
+</body>
+</html>

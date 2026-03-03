@@ -1,0 +1,24 @@
+CREATE DATABASE IF NOT EXISTS usersdb;
+USE usersdb;
+
+-- users
+CREATE TABLE IF NOT EXISTS users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  username VARCHAR(50) NOT NULL UNIQUE,
+  email VARCHAR(100) NULL,
+  password_hash VARCHAR(255) NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- books
+CREATE TABLE IF NOT EXISTS books (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  user_id INT NOT NULL,
+  title VARCHAR(255) NOT NULL,
+  author VARCHAR(255) NOT NULL,
+  status ENUM('reading', 'finished') NOT NULL DEFAULT 'reading',
+  date_added DATE NOT NULL DEFAULT (CURRENT_DATE),
+  date_finished DATE,
+  review TEXT,
+  FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);

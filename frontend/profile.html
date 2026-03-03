@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PagePals — Profile</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="books.html">PagePals</a>
+    <div class="nav-links">
+      <a href="books.html">My Books</a>
+      <a href="add.html">Add Book</a>
+      <a href="profile.html" class="active">Profile</a>
+      <button class="logout-btn" onclick="logout()">Sign out</button>
+    </div>
+  </nav>
+
+  <main class="profile-main">
+    <div class="profile-header">
+      <div class="avatar" id="avatarLetter">?</div>
+      <div>
+        <h2 id="profileName">Loading...</h2>
+        <p>PagePals member</p>
+      </div>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-number" id="statTotal">—</div>
+        <div class="stat-label">Total books</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" id="statFinished">—</div>
+        <div class="stat-label">Finished</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" id="statReading">—</div>
+        <div class="stat-label">Reading now</div>
+      </div>
+    </div>
+
+    <div class="section-title">Recent activity</div>
+    <div class="recent-books" id="recentBooks"></div>
+  </main>
+
+  <script src="profile.js"></script>
+</body>
+</html>

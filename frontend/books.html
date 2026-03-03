@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PagePals — My Books</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="books.html">PagePals</a>
+    <div class="nav-links">
+      <a href="books.html" class="active">My Books</a>
+      <a href="add.html">Add Book</a>
+      <a href="profile.html">Profile</a>
+      <button class="logout-btn" onclick="logout()">Sign out</button>
+    </div>
+  </nav>
+
+  <main class="page-main">
+    <div class="page-header">
+      <div>
+        <h2>My Books</h2>
+        <span id="bookCount"></span>
+      </div>
+      <a class="btn-primary" href="add.html">+ Add book</a>
+    </div>
+
+    <div class="filters">
+      <button class="filter-btn active" onclick="filterBooks('all', this)">All</button>
+      <button class="filter-btn" onclick="filterBooks('reading', this)">Reading</button>
+      <button class="filter-btn" onclick="filterBooks('finished', this)">Finished</button>
+    </div>
+
+    <div class="books-grid" id="booksGrid"></div>
+  </main>
+
+  <script src="books.js"></script>
+</body>
+</html>

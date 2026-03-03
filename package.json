@@ -9,9 +9,11 @@
   "author": "Mikkel",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^6.0.0",
     "db": "^6.0.3",
     "express": "^5.2.1",
     "maria": "^0.0.1-a",
+    "openai": "^4.86.2",
     "sudo": "^1.0.3"
   }
 }

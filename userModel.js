@@ -1,6 +1,7 @@
 const bcrypt = require("bcrypt");
-const { query } = require("./db");
+const { query } = require("./dbconnector");
 
+/** creates a new user with a hashed password */
 async function createUser(username, password) {
   try {
     const saltRounds = 10;
@@ -21,6 +22,7 @@ async function createUser(username, password) {
   }
 }
 
+/** checks username and password against the database, returns true or false */
 async function verifyUser(username, password) {
   const rows = await query(
     "SELECT password_hash FROM users WHERE username = ?",
